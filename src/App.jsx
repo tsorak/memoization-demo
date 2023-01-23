@@ -45,9 +45,16 @@ function App() {
       <NumberViewerProps count={count} />
       <NumberViewerMemo count={count} />
 
+      <NumberViewer count={count} />
+
       <h3>App component rerender count: {rerenderCount}</h3>
     </div>
   );
+}
+
+function NumberViewer({ count }) {
+  const color = `hsl(${Math.round(Math.random() * 360)},100%,35%)`;
+  return <p style={{ color }}>(Default behaviour) count: {count}</p>;
 }
 
 function NumberViewerContext() {
